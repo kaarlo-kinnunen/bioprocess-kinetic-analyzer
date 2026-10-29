@@ -24,7 +24,8 @@ from bioprocess.kinetics import (
 )
 
 
-def _make_exponential_growth_df():
+@pytest.fixture
+def exponential_growth_df():
     """Small synthetic batch run with known exponential growth rate."""
     mu_expected = 0.20
     x0 = 0.5
@@ -52,12 +53,6 @@ def _make_exponential_growth_df():
         }
     )
     return df, mu_expected
-
-
-@pytest.fixture
-def exponential_growth_df():
-    """Pytest fixture for the synthetic exponential batch data."""
-    return _make_exponential_growth_df()
 
 
 def test_specific_growth_rate_recovers_known_mu(exponential_growth_df):
@@ -140,9 +135,3 @@ def test_zero_biomass_edge_case_is_safe():
     mu_window, r2 = mu_in_window(df, 0.0, 10.0)
     assert mu_window == 0.0
     assert np.isfinite(r2)
-
-
-if __name__ == "__main__":
-    import pytest
-
-    raise SystemExit(pytest.main([__file__, "-q"]))
