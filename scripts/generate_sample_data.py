@@ -138,7 +138,12 @@ def simulate_process_controls(time_h):
     """Temperature, agitation, and pressure mimic controlled bioreactor operation."""
     temperature_c = 30.0 + 0.25 * np.sin(2.0 * np.pi * time_h / 16.0)
     temperature_c += 2.8 * np.exp(-0.5 * ((time_h - 59.0) / 1.4) ** 2)
-    temperature_c = np.clip(temperature_c, 28.0, 36.0)
+
+    # Deliberate process excursion for CPP testing: a short temperature spike above 38 C
+    # centred around hour 55, while keeping the rest of the control profile unchanged.
+    temperature_c += 8.5 * np.exp(-0.5 * ((time_h - 55.0) / 1.3) ** 2)
+
+    temperature_c = np.clip(temperature_c, 28.0, 42.0)
 
     agitation_rpm = 170.0 + 130.0 / (1.0 + np.exp(-(time_h - 8.0) / 6.0))
     agitation_rpm += 10.0 * np.sin(2.0 * np.pi * time_h / 10.0)
