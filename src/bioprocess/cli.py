@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import sys
 
-import pandas as pd
-
+from .loader import DataValidationError, load_run_with_report
 from .report import build_report
 
 
@@ -37,11 +37,14 @@ def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
 
-    input_path = Path(args.csv_path)
-    if not input_path.exists():
-        parser.error(f"CSV file not found: {input_path}")
+    try:
+        df, validation_report = load_run_with_report(args.csv_path)
+    except DataValidationError as exc:
+        parser.error(str(exc))
 
-    df = pd.read_csv(input_path)
+    for warning in validation_report.warnings:
+        print(f"warning: {warning}", file=sys.stderr)
+
     output_path = Path(args.out)
     output_path = build_report(df, output_path, run_id=args.run_id)
     print(output_path)
