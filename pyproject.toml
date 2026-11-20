@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "bioprocess-kinetic-analyzer"
 version = "0.1.0"
-description = "Kinetic analysis and PDF reporting for hydrogen-fermentation bioreactor runs"
+description = "Kinetic analysis and PDF reporting for Knallgas gas-fermentation bioreactor runs"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [

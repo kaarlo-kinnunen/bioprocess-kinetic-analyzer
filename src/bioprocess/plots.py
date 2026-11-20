@@ -1,4 +1,4 @@
-"""Report-ready plotting helpers for the batch hydrogen-fermentation dataset."""
+"""Report-ready plotting helpers for the batch Knallgas gas-fermentation dataset."""
 
 from __future__ import annotations
 

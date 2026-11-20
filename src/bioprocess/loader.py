@@ -1,4 +1,4 @@
-"""Load and validate batch hydrogen-fermentation CSV logs."""
+"""Load and validate batch Knallgas gas-fermentation CSV logs."""
 
 from __future__ import annotations
 

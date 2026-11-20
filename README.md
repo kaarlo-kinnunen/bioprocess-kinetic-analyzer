@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 
-Kinetic analysis and executive PDF reports for hydrogen-fermentation (gas fermentation) bioreactor runs.
+Kinetic analysis and executive PDF reports for Knallgas (aerobic hydrogen-oxidizing) gas-fermentation bioreactor runs.
 
 ## Why this exists
 

@@ -1,4 +1,4 @@
-"""Batch hydrogen-fermentation kinetics utilities for the sample bioreactor CSV."""
+"""Batch Knallgas gas-fermentation kinetics utilities for the sample bioreactor CSV."""
 
 from __future__ import annotations
 

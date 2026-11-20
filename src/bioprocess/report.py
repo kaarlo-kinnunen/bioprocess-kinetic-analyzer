@@ -1,4 +1,4 @@
-"""Executive PDF report generation for a synthetic hydrogen-fermentation run."""
+"""Executive PDF report generation for a synthetic Knallgas gas-fermentation run."""
 
 from __future__ import annotations
 
@@ -363,7 +363,7 @@ def _cpp_table(excursions: List[Excursion]) -> List[List[str | object]]:
 
 
 def build_report(df: pd.DataFrame, out_path: str | Path, run_id: str = "RUN-001", limits: Optional[Mapping[str, tuple[float, float]]] = None) -> Path:
-    """Build the executive PDF report for a batch hydrogen-fermentation run."""
+    """Build the executive PDF report for a batch Knallgas gas-fermentation run."""
     if not isinstance(df, pd.DataFrame):
         raise TypeError("df must be a pandas DataFrame")
 

@@ -1,4 +1,4 @@
-"""Phase detection for batch hydrogen-fermentation runs using dynamic growth-rate changes."""
+"""Phase detection for batch Knallgas gas-fermentation runs using dynamic growth-rate changes."""
 
 from __future__ import annotations
 
